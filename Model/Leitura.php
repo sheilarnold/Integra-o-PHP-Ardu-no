@@ -1,6 +1,6 @@
 <?php
 
-	class Temperatura{
+	class Leitura{
 		private $id;
 		private $id_sensor;
 		private $data;

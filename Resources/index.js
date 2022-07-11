@@ -2,11 +2,11 @@
 $(document).ready(function(){
 	setInterval(function(){
 		$('#temperatura').load(window.location.href + " " + '#temperatura');
-		registra_temperatura();
+		registra_leitura();
 	}, 5000);
 });
 
-function registra_temperatura(){
+function registra_leitura(){
 	valorDiv = $("#temp").text();
 	temperatura = valorDiv.split("Temperatura: ")[1];
 	
@@ -17,7 +17,7 @@ function registra_temperatura(){
 	}
 	
 	$.ajax({
-        url: "../Control/TemperaturaControl.php",
+        url: "../Control/LeituraControl.php",
         type: "post",
         data: leitura ,
         success: function (response) {

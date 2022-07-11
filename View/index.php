@@ -2,7 +2,7 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', '1');
 	/*echo "This is a warning error";*/
-	include '../DAO/TemperaturaDao.php';
+	include '../DAO/LeituraDao.php';
 	include 'mostratemp.php';
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
 	<head>
 		<meta charset="UTF-8">
 		
-		<title>Leitor de Temperatura</title>
+		<title>Registro de Temperatura</title>
 		
 		<meta name="viewport"
 			  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -28,7 +28,6 @@
 				  echo "Data: ".date("d/m/Y");
 				  echo "<br>Hora: ".date("H:i:s");
 				  echo "<div id='temp'>Temperatura: ".temperatura()."</div>";
-
 		   ?>
 	   </div>
 	   <br>
@@ -43,7 +42,7 @@
 			<tbody>
 			   
 					<?php
-						$obj = new TemperaturaDao();
+						$obj = new LeituraDao();
 						$dados= $obj->listAll();
 						
 						foreach ($dados as $dado) {
